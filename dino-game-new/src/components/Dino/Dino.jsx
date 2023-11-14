@@ -18,6 +18,8 @@ function Dino() {
     }
   };
 
+  // DO: Chnage the code below to call the jump function by any keypress instead of a button click
+  // Hint! use useEffect and addEventListener
   const handleJumpButtonClick = () => {
     jump();
   };
@@ -48,6 +50,7 @@ function Dino() {
       Score : {score}
       <div id="dino" ref={dinoRef}></div>
       <div id="cactus" ref={cactusRef}></div>
+      {/* DO: Delete the jump button */}
       <button onClick={handleJumpButtonClick}>Jump</button>
     </div>
   );
