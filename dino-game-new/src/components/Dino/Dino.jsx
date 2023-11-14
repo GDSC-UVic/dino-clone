@@ -8,38 +8,13 @@ function Dino() {
   const cactusRef = useRef();
   const [score, setScore] = useState(0);
 
-  useEffect(() => {
-    
-    const isAlive = setInterval(function () {
-      // DO: Inside the setInterval function, get the current dino and cactus position.
-      // Hint! get current dino Y position
-      // Hint! parseInt() function converts a string to an integer.
-      // Hint! getComputedStyle() function returns the values of all the CSS properties of an element.
-      // Code goes here ...
-      
-
-      // DO: Do the same exact thing for the cactus position.
-      // Hint! get current cactus X position
-      // Code goes here ...
-      
-
-      // DO: Check for collision.
-      // DO: Check if the cactus is less than 40px from the left and greater than 0px.
-      // DO: Check if the dino is less than 140px from the top.
-      // Hint! use if statement
-      // DO: If the above conditions are true, then alert "Game Over! Your Score : " + score by using alert() function.
-      // DO: If the above conditions are false, then increment the score by 1.
-      // Hint! use setScore() function
-      // Code goes here ...
-
-
-    }, 10);
-    
-    // DO: Change the code below to return the clearInterval function.
-    // This is to clear the interval when the component is unmounted.
-    // Code goes here ...
-    return () => {};
-  });
+  // IDEA: track the dino and cactus position and check if they are intersecting. If yes, then game over.
+  // DO: Create a useEffect hook to create an interval to continuously check for collision.
+  // DO: Inside the useEffect hook create a setInterval to continuously check for collision.
+  // DO: Inside the setInterval function, get the current dino and cactus position.
+  // DO: Inside the setInterval function, check if they are intersecting. If yes, then game over.
+  // DO: Clear the interval when the component unmounts.
+  // Code goes here ...
 
   return (
     <div className="game">
