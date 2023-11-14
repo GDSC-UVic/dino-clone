@@ -6,21 +6,22 @@ function Dino() {
   const cactusRef = useRef();
   const [score, setScore] = useState(0);
 
-  // This is the jump function and it is also to prevent the dino from jumping multiple times
   const jump = () => {
 
-    // Condition to check if the dino element has the jump class
     if (!!dinoRef.current && !dinoRef.current.classList.contains('jump')) {
-      // Adds a jump class to the dino element
+  
       dinoRef.current.classList.add('jump');
       
-      // DO: Remove the jump class after 300ms to end the jump animation
-      // Code goes here ...
+      setTimeout(function () {
+        dinoRef.current.classList.remove('jump');
+      }, 300);
     }
   };
 
-  // DO: Create a function handleJumpButtonClick which calls the jump function
-  // Code goes here ...
+  const handleJumpButtonClick = () => {
+    jump();
+  };
+ 
 
   useEffect(() => {
     const isAlive = setInterval(function () {
@@ -47,8 +48,7 @@ function Dino() {
       Score : {score}
       <div id="dino" ref={dinoRef}></div>
       <div id="cactus" ref={cactusRef}></div>
-      {/* DO: Create a jump button which triggers the jump function*/}
-      {/* Code goes here ... */}
+      <button onClick={handleJumpButtonClick}>Jump</button>
     </div>
   );
 }
