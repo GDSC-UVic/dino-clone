@@ -2,9 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Dino.css';
 
 function Dino() {
+  const [startScreen, setStartScreen] = useState(true);
+
   const dinoRef = useRef();
   const cactusRef = useRef();
   const [score, setScore] = useState(0);
+
+  const handleClick = () => {
+    setStartScreen(false);
+  };
 
   const jump = () => {
 
@@ -35,7 +41,8 @@ function Dino() {
       );
 
       if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 140) {
-        alert('Game Over! Your Score : ' + score);
+        alert('Game Over! Your Score : ' + score)
+        setStartScreen(true);
         setScore(0);
       } else {
         setScore(score + 1);
@@ -46,6 +53,12 @@ function Dino() {
   });
 
   return (
+    <>
+    {startScreen ? (
+      <div className="startScreen">
+        <button onClick={handleClick}>Start Game</button>
+      </div>
+    ) :
     <div className="game">
       Score : {score}
       <div id="dino" ref={dinoRef}></div>
@@ -53,6 +66,8 @@ function Dino() {
       {/* DO: Delete the jump button */}
       <button onClick={handleJumpButtonClick}>Jump</button>
     </div>
+}
+    </>
   );
 }
 
