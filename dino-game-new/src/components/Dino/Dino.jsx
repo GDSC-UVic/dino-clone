@@ -14,7 +14,7 @@ function Dino() {
       
       setTimeout(function () {
         dinoRef.current.classList.remove('jump');
-      }, 300);
+      }, 400);
     }
   };
 
@@ -33,9 +33,11 @@ function Dino() {
         getComputedStyle(cactusRef.current).getPropertyValue('left')
       );
 
-      if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 140) {
+      if (cactusLeft < 90 && cactusLeft > 0 && dinoTop >= 130) {
         alert('Game Over! Your Score : ' + score);
         setScore(0);
+        // reset cactus position
+        cactusLeft = 1000;
       } else {
         setScore(score + 1);
       }

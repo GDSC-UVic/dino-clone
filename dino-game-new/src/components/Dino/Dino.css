@@ -1,23 +1,25 @@
 .game {
-    width: 800px;
-    height: 425px;
-    border: 2px solid rgb(3, 23, 4);
-    background-color: white; 
-    margin: auto;
-  }
+  /* Your existing styles for the .game container */
+  width: 900px;
+  height: 425px;
+  border: 2px solid rgb(3, 23, 4);
+  background-color: white; 
+  margin: auto;
+  position: relative; /* Add position: relative to the .game container */
+}
   
-  #dino {
-    width: 50px;
-    height: 50px;
-    background-image: url(img/trex.png);
-    background-size: 50px 50px;
-    position: relative;
-    top: 150px;
-    /*margin-left: 15%;*/
-  }
+#dino {
+  width: 50px;
+  height: 50px;
+  background-image: url(img/trex.png);
+  background-size: 50px 50px;
+  position: absolute;
+  top: 150px; /* Adjust this value as needed */
+  left: 50px; /* Adjust this value to position the dino */
+}
   
   .jump {
-    animation: jump 0.3s linear;
+    animation: jump 0.4s linear;
   }
   
   @keyframes jump {
@@ -45,20 +47,20 @@
   #cactus {
     width: 20px;
     height: 40px;
-    position: relative;
-    top: 110px;
-    left: 580px;
+    position: absolute; /* Change position to absolute */
+    top: 150px;
+    left: calc(100% - 20px); /* Position the cactus at the right end of the .game container */
     background-image: url("img/cactus.png");
     background-size: 20px 40px;
-    animation: block 1s infinite linear;
+    animation: block 3s infinite linear; /* Adjust animation duration as needed */
   }
   
   @keyframes block {
     0% {
-      left: 580px;
+      left: calc(100% - 20px); /* Starting position at the right end of the .game container */
     }
   
     100% {
-      left: -5px;
+      left: -5px; /* Ending position */
     }
   }
