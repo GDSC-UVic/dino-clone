@@ -13,7 +13,7 @@
   #dino {
     width: 50px;
     height: 50px;
-    background-image: url(img/DinoSprite.png);
+    background-image: url(img/dino.png);
     background-size: 50px 50px;
     position: relative;
     top: 130px;
@@ -66,7 +66,7 @@
     position: relative;
     top: 90px;
     left: 6px;
-    background-image: url("img/CactusSprite.png");
+    background-image: url("img/cactus.png");
     background-size: 20px 40px;
     animation: moveCactus 2s infinite linear;
   }
