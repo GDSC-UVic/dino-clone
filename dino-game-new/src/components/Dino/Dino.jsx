@@ -38,7 +38,7 @@ function Dino() {
         getComputedStyle(cactusRef.current).getPropertyValue('left')
       );
 
-      if (cactusLeft < 40 && cactusLeft > 0 && dinoTop >= 140) {
+      if (cactusLeft < 240 && cactusLeft > 190 && dinoTop >= 130) {
         alert('Game Over! Your Score : ' + score);
         setStartScreen(true);
         setScore(0);
@@ -46,6 +46,8 @@ function Dino() {
         setScore(score + 1);
       }
     }, 10);
+
+  
 
     return () => clearInterval(isAlive);
   });
