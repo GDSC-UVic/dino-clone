@@ -1,9 +1,16 @@
-// Section 1: DO: import useState hook and useRef hook
+// Section 1: DO: import useState hook, useEffect hook, and useRef hook
 // Code goes here
 // Section 1: DO: import css file
 // Code goes here
 
 function Dino() {
+
+  const [startScreen, setStartScreen] = useState(true);
+
+  const handleClick = () => {
+    setStartScreen(false);
+  };
+
   // Section 1: DO: ref to get 'dino' html element in js
   // Hint! use useRef hook
   // Code goes here
@@ -25,7 +32,7 @@ function Dino() {
       // Adds a jump class to the dino element
       dinoRef.current.classList.add('jump');
       
-      // Section 3: DO: Remove the jump class after 300ms to end the jump animation
+      // Section 3: DO: Remove the jump class after 600ms to end the jump animation
       // Hint! use setTimeout function
       // Code goes here ...
     }
@@ -60,10 +67,10 @@ function Dino() {
       
 
       // Section 2: DO: Check for collision.
-      // Section 2: DO: Check if the cactus is less than 40px from the left and greater than 0px.
-      // Section 2: DO: Check if the dino is less than 140px from the top.
+      // Section 2: DO: Check if the cactus is less than 240px from the left and greater than 190px.
+      // Section 2: DO: Check if the dino is less than 130px from the top.
       // Hint! use if statement
-      // Section 2: DO: If the above conditions are true, then alert "Game Over! Your Score : " + score by using alert() function.
+      // Section 2: DO: If the above conditions are true, then alert "Game Over! Your Score : " + score by using alert() function. Also reset the score to 0 and set the startScreen to true.
       // Section 2: DO: If the above conditions are false, then increment the score by 1.
       // Hint! use setScore() function
       // Code goes here ...
@@ -76,7 +83,14 @@ function Dino() {
   });
 
   return (
-    <div className="game">
+
+    <div>
+      {startScreen ? (
+      <div className="startScreen">
+        <button onClick={handleClick}>Start Game</button>
+      </div>
+      ) :
+      <div className="game">
       {/* Section 1: DO: using the h2 tag create a score board */}
       {/* Hint! Make use of the usestate you created */}
       {/* Code goes here */}
@@ -93,7 +107,10 @@ function Dino() {
 
       {/* Section 3: DO: Create a jump button which triggers the jump function*/}
       {/* Code goes here ... */}
+      </div>
+      }
     </div>
+    
   );
 }
 
